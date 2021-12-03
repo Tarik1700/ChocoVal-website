@@ -19,13 +19,13 @@
         <div class="">
           <div class=" bg-gray-900 text-white w-screen  bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60">
           <div class="w-full  ">
-            <div x-data="{ open: true }" class="flex flex-col max-w-screen-xl px-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 xl:mx-28 lg:px-8">
+            <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 xl:mx-28 lg:px-8">
               <div class="flex flex-row items-center justify-between ">
                 <a href="#" class="text-3xl font-bold font-heading py-1">
                     <img class=" h-24 pt-1 " src="img/photoshoptry4.png" alt="logo">
                 </a>
 
-                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <button class=" rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                   <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                     <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                     <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -175,38 +175,38 @@
 
 
 
-    <div class="bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  ">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:ml-80 md:flex-auto">
+    <div class="  ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-24 md:flex-auto">
           <div class="max-w-2xl mx-auto  sm:py-24 lg:pb-2 lg:pt-0 lg:max-w-none">
-            <h2 class="text-5xl font-extrabold    pt-4 text-gray-600 border-b-2 ml-5 mr-16 ">Links</h2>
+            <h2 class="text-5xl font-extrabold    pt-4 pb-1 text-gray-600 border-b-2 ml-5 mr-6">Links</h2>
       
-            <div class="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 xl:gap-x-72 md:grid-cols-3 sm:grid-cols-1">
+            <div class="mt-6  lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 md:grid-cols-3 text-center justify-center grid grid-cols-3">
               <div class="group relative">
-                <div class="relative w-full  h-80 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48 lg:aspect-w-1 lg:aspect-h-1">
-                  <a href="https://www.facebook.com/chocovalsarajevo/" target="_blank" ><img  src="img/facebooklogo2.png"   class="h-full  object-center object-cover"></a>
+                <div class="relative w-full  h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48 lg:aspect-w-1 lg:aspect-h-1">
+                  <a href="https://www.facebook.com/chocovalsarajevo/" target="_blank" ><img  src="img/facebooklogo2.png"   class=" mx-auto h-full"></a>
                 </div>
-                <h3 class="mt-6 text-sm text-gray-500">
-                <p class="text-3xl text-left pl-8 font-semibold ">Facebook</p>
+                <h3 class="mt-4  text-gray-500">
+                <p class="text-1xl md:text-3xl md:text-center text-center font-semibold ">Facebook</p>
             </h3>
               </div>
       
               <div class="group relative">
-                <div class="relative w-full h-80 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
-                 <a href="https://www.instagram.com/choco_val_sarajevo/"target="_blank" > <img src="img/instagramlogo2.png"  class=" h-full object-center object-cover"> </a>
+                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
+                 <a href="https://www.instagram.com/choco_val_sarajevo/"target="_blank" > <img src="img/instagramlogo2.png"  class=" h-full mx-auto"> </a>
                 </div>
-                <h3 class="mt-6 text-sm text-gray-500">
-                    <p class="text-3xl text-left pl-7 xl:pl-6  font-semibold ">Instagram</p>
+                <h3 class="mt-4  text-gray-500">
+                    <p class="text-1xl md:text-3xl md:text-center text-center font-semibold ">Instagram</p>
                 </h3>
                
               </div>
       
               <div class="group relative">
-                <div class="relative w-full h-80 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
-                 <a href="https://www.korpa.ba/partner/choco-val" target="_blank"> <img src="img/korpalogo.png"   class="h-full text-center object-center object-cover"></a>
+                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
+                 <a href="https://www.korpa.ba/partner/choco-val" target="_blank"> <img src="img/korpalogo.png"   class=" mb-16 h-full mx-auto"></a>
                 </div>
-                <h3 class="mt-6  text-gray-500">
+                <h3 class="mt-4  text-gray-500">
                   
-                <p class="text-3xl text-left pl-14 font-semibold ">Korpa</p>
+                <p class="text-1xl md:text-3xl   font-semibold  md:text-center mx-auto text-center">Korpa</p>
                 </h3>
               </div>
             </div>
@@ -219,11 +219,11 @@
 
   
   
-  <div class="flex flex-wrap items-center bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:justify-between justify-center">
+  <div class="flex flex-wrap items-center bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:justify-between justify-center mt-2">
     <div class="w-full md:w-full px-4 mx-auto bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:text-right text-center">
-      <div class="text-sm text-blueGray-500 font-semibold bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 py-1 text-gray-600">
+      <div class="text-sm text-blueGray-500 font-semibold bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-600 py-1 text-gray-600">
         Copyright © <span id="get-current-year">2021</span>
-        <a href="https://github.com/Tarik1700" class="text-gray-600" target="_blank">Tarik Omerhodzic</a>.
+        <a href="https://github.com/Tarik1700" class="text-gray-600 " target="_blank">Tarik Omerhodzic</a>.
       </div>
     </div>
   </div>
@@ -265,5 +265,7 @@ if(btn){
   });
 }
 </script>
+
+
 </body>
 </html>
