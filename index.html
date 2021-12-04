@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale-1.0, minimum-scale-1.0">
     <script defer src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="lightbox.css">
 </head>
 <body x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" >
 
@@ -97,35 +98,35 @@
         
 
           
-          <div aria-hidden="true" class="pointer-events-none mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full ">
+          <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full ">
           <div class=" transform left-1/2 top-0  lg:right-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 xl:-translate-x-40">
 
           <div class="flex items-center space-x-6 lg:space-x-8">
             <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
               <div class="w-44 h-64 rounded-lg overflow-hidden  lg:opacity-100">
-                <img src="img/insta1.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
+                <a href="img/insta1.png" data-lightbox="grid"></a><img src="img/insta1.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
               <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta2.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
-              </div>
-            </div>
-            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta3.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
-              </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta4.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
-              </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta5.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
+                <a href="img/insta2.png" data-lightbox="grid"> <img src="img/insta2.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
             </div>
             <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
               <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta6.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
+                <a href="img/insta3.png" data-lightbox="grid"> <img src="img/insta3.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
               <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <img src="img/insta7.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down">
+                <a href="img/insta4.png" data-lightbox="grid"></a><img src="img/insta4.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+              <div class="w-44 h-64 rounded-lg overflow-hidden">
+                <a href="img/insta5.png" data-lightbox="grid"> <img src="img/insta5.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+            </div>
+            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+              <div class="w-44 h-64 rounded-lg overflow-hidden">
+                <a href="img/insta6.png" data-lightbox="grid"> <img src="img/insta6.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+              <div class="w-44 h-64 rounded-lg overflow-hidden">
+                <a href="img/insta7.png" data-lightbox="grid"> <img src="img/insta7.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
             </div>
           </div>
@@ -144,7 +145,7 @@
                     <h1 class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
                       Check out our gallery!
                     </h1>
-                    <p class="mt-4 text-xl lg:pr-4  text-gray-400 text-justify">Handmade chocolate. Made from belgian chocolate and natural engrediends without artificial aromas</p>
+                    <p class="mt-4 text-xl lg:pr-4  text-gray-400 text-justify">See some of our products in the Gallery. Click below to check them out!</p>
                   </div>
                   <div class="mt-10">
                
@@ -183,7 +184,7 @@
       
             <div class="mt-6  lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 md:grid-cols-3 text-center justify-center grid grid-cols-3">
               <div class="group relative">
-                <div class="relative w-full  h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48 lg:aspect-w-1 lg:aspect-h-1">
+                <div class="relative w-full  h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-28 lg:aspect-w-1 lg:aspect-h-1">
                   <a href="https://www.facebook.com/chocovalsarajevo/" target="_blank" ><img  src="img/facebooklogo2.png"   class=" mx-auto h-full"></a>
                 </div>
                 <h3 class="mt-4  text-gray-600">
@@ -192,7 +193,7 @@
               </div>
       
               <div class="group relative">
-                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
+                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-28  lg:aspect-w-1 lg:aspect-h-1">
                  <a href="https://www.instagram.com/choco_val_sarajevo/"target="_blank" > <img src="img/instagramlogo2.png"  class=" h-full mx-auto"> </a>
                 </div>
                 <h3 class="mt-4  text-gray-600">
@@ -202,7 +203,7 @@
               </div>
       
               <div class="group relative">
-                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-48  lg:aspect-w-1 lg:aspect-h-1">
+                <div class="relative w-full h-20 bg-transparent rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1  lg:h-28  lg:aspect-w-1 lg:aspect-h-1">
                  <a href="https://www.korpa.ba/partner/choco-val" target="_blank"> <img src="img/korpalogo.png"   class=" mb-16 h-full mx-auto"></a>
                 </div>
                 <h3 class="mt-4  text-gray-600">
@@ -253,19 +254,10 @@
 
 
 
-
-
-<script>
-                
-  const btn = document.getElementById("mobile-menu-button");
-  const menu = document.querySelector(".mobile-menu");
-if(btn){
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    console.log("hello")
-  });
-}
+<script src="lightbox-plus-jquery.js"> 
 </script>
+
+
 
 
 </body>
