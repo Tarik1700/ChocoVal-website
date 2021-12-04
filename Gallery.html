@@ -5,51 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choco val</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="lightbox.css" rel="stylesheet" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale-1.0, minimum-scale-1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="lightbox.css">
 </head>
-<body>
+<body x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" >
 
-  <div class="bg-fixed lg:bg-cover sm:bg-left" style="background-image: url(img/background1.jpg)">
+  <div class="bg-fixed md:bg-cover bg-cover " style="background-image: url(img/bgdarkchoco.jpg)">
+    
 
-<!--nav bar code below-->
-
-<div>
+    <div>
 
       
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <div class="">
-    <div class=" bg-gray-900 text-white w-screen  bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60">
-    <div class="w-full  ">
-      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 xl:mx-28 lg:px-8">
-        <div class="flex flex-row items-center justify-between ">
-          <a href="index.html" class="text-3xl font-bold font-heading py-1">
-              <img class=" h-24 pt-1 " src="img/photoshoptry4.png" alt="logo">
-          </a>
+        
+        <div class="fixed z-10"  >
+          <div class=" bg-gray-900 text-white w-screen  bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60">
+          <div class="w-full  ">
+            <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 xl:mx-28 lg:px-8">
+              <div class="flex flex-row items-center justify-between ">
+                <a href="index.html" class="text-3xl font-bold font-heading py-1">
+                    <img class=" h-24 pt-1 transition-all duration-200 " src="img/photoshoptry4.png" alt="logo" :class="{'h-24': !scrolledFromTop, 'h-14': scrolledFromTop}">
+                </a>
 
-          <button class=" rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-        <nav :class="{'flex': open, 'hidden': !open}" class=" flex-col font-semibold font-heading md:space-x-12 xl:space-x-20 text-white flex-grow hidden pb-4 md:pb-0 md:mx-auto md:flex md:flex-row md:justify-center ">
-          <a class="px-4 py-2 mt-2  font-semibold bg-transparent rounded-lg md:-ml-10 md:mt-0 xl:ml-80  hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html">Home</a>
-          <a class="px-4 py-2 mt-2  font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Gallery.html">Gallery</a>
-          <a class="px-4 py-2 mt-2  font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Location.html">Location</a>
-          <a class="px-4 py-2 mt-2 font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Contact.html">Contact</a>
-          <div @click.away="open = false" class="relative" x-data="{ open: true }">
-            
+                <button class=" rounded-lg md:hidden focus:outline-none focus:shadow-outline transition duration-200 " @click="open = !open">
+                  <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
               </div>
+              <nav :class="{'-translate-x-2 flex text-opacity-100 md:translate-x-100': open, 'translate-x-full md:translate-x-0 h-0 md:h-10 text-opacity-0 ': !open}" class="text-opacity-0 md:text-opacity-100 transition-transform duration-700 flex-col pl-1  transform font-semibold font-heading md:space-x-12 xl:space-x-24 text-white flex-grow pb-4 md:pb-0 md:mx-auto md:flex md:flex-row md:justify-center ">
+                <a class="px-4 md:px-10  py-2 mt-2  font-semibold bg-transparent rounded-lg md:-ml-10 md:mt-0 xl:ml-80  hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html">Home</a>
+                <a class="px-4 py-2 mt-2  font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Gallery.html">Gallery</a>
+                <a class="px-4 py-2 mt-2  font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Location.html">Location</a>
+                <a class="px-4 py-2 mt-2 font-semibold bg-transparent rounded-lg  md:-ml-10 md:mt-0 xl:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Contact.html">Contact</a>
+                <div @click.away="open= false" class="relative" x-data="{ open: true }">
+                  
+                    </div>
+                  </div>
+                </div>    
+              </nav>
             </div>
-          </div>    
-        </nav>
-      </div>
-    </div>
-  </div>
+          </div>
+        </div>
         <!-- nav bar code above-->  
       
 
@@ -64,44 +62,44 @@
       
 
 
-<div class="bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60 ">
+<div class="bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60  ">
 
-  <div class=" ">
-    <div class="relative  overflow-hidden ">
-      <div class="pt-2 pb-80  lg:pt-72 lg:pb-72">
+  <div class=" pt-32">
+    <div class="relative  overflow-hidden lg:py-24">
+      <div class="pt-2 pb-20 md:pb-80  lg:pt-72 lg:pb-72 lg:my-5 ">
         <div class="relative max-w-7xl mx-auto px-4  lg:px-8 ">
         
 
           
-          <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full ">
-          <div class=" transform left-1/2 top-0  lg:right-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+          <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full   ">
+          <div class=" transform left-1/2 top-0  lg:right-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:-translate-x-80">
 
-          <div class="flex items-center space-x-6 lg:space-x-8">
-            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-              <div class="w-44 h-64 rounded-lg overflow-hidden  lg:opacity-100">
-               <a href="img/insta1.png" data-lightbox="grid"><img src="img/insta1.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+          <div class="flex items-center justify-center md:justify-start space-x-6 lg:space-x-6">
+            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-2">
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden  lg:opacity-100 ">
+               <a href="img/insta1.png" data-lightbox="grid"><img src="img/insta1.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta2.png" data-lightbox="grid"> <img src="img/insta2.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden ">
+                <a href="img/insta2.png" data-lightbox="grid"> <img src="img/insta2.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+            </div>
+            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8  ">
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                <a href="img/insta3.png" data-lightbox="grid">     <img src="img/insta3.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                <a href="img/insta4.png" data-lightbox="grid">   <img src="img/insta4.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              </div>
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                <a href="img/insta5.png" data-lightbox="grid">  <img src="img/insta5.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
             </div>
             <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta3.png" data-lightbox="grid">     <img src="img/insta3.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                <a href="img/insta6.png" data-lightbox="grid">   <img src="img/insta6.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta4.png" data-lightbox="grid">   <img src="img/insta4.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-              </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta5.png" data-lightbox="grid">  <img src="img/insta5.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-              </div>
-            </div>
-            <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta6.png" data-lightbox="grid">   <img src="img/insta6.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-              </div>
-              <div class="w-44 h-64 rounded-lg overflow-hidden">
-                <a href="img/insta7.png" data-lightbox="grid"> <img src="img/insta7.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+              <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                <a href="img/insta7.png" data-lightbox="grid"> <img src="img/insta7.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
               </div>
             </div>
           </div>
@@ -113,44 +111,43 @@
             <div class="mt-10 grid-2">
               <!-- Decorative image grid -->
               <div class=" lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
-                <div class="relative transform  text-center pr-3  lg:text-left lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 xl:translate-x-16">
+                <div class="relative transform  text-center md:pr-3  lg:text-left lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 xl:-translate-x-96">
 
 
-                  <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full ">
+                  <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full  ">
                     <div class=" transform left-1/2 top-0  lg:right-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
           
-                    <div class="flex items-center space-x-6 lg:space-x-8">
-                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div class="w-44 h-64 rounded-lg overflow-hidden  lg:opacity-100">
-                         <a href="img/insta1.png" data-lightbox="grid"><img src="img/insta1.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                    <div class="flex items-center justify-center md:justify-start space-x-6 lg:space-x-10 ">
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-24 lg:gap-y-16">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden  lg:opacity-100">
+                         <a href="img/insta8.png" data-lightbox="grid"><img src="img/insta8.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
                         </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta2.png" data-lightbox="grid"> <img src="img/insta2.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-                        </div>
-                      </div>
-                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta3.png" data-lightbox="grid">     <img src="img/insta3.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-                        </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta4.png" data-lightbox="grid">   <img src="img/insta4.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
-                        </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta5.png" data-lightbox="grid">  <img src="img/insta5.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta9.png" data-lightbox="grid"> <img src="img/insta9.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
                         </div>
                       </div>
-                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta6.png" data-lightbox="grid">   <img src="img/insta6.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-48   md:pb-2">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta10.png" data-lightbox="grid">     <img src="img/insta10.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
                         </div>
-                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                          <a href="img/insta7.png" data-lightbox="grid"> <img src="img/insta7.png" alt="" class="w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta11.png" data-lightbox="grid">  <img src="img/insta11.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                      </div>
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-24 lg:gap-y-16">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta12.png" data-lightbox="grid">   <img src="img/insta12.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta13.png" data-lightbox="grid"> <img src="img/insta13.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
                         </div>
                       </div>
                     </div>
                     </div>
                     </div>
 
+                    
                
 
 
@@ -160,6 +157,64 @@
     
              
             </div>
+
+
+          </div>
+
+          <div>
+            <div class="mt-10 grid-2">
+              <!-- Decorative image grid -->
+              <div class=" lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
+                <div class="relative transform  text-center md:pr-3  lg:text-left lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8 xl:-translate-x-5">
+
+
+                  <div aria-hidden="true" class=" mt-5 lg:-mt-4 lg:mb-5 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full ">
+                    <div class=" transform left-1/2 top-0  lg:right-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-80">
+          
+                    <div class="flex items-center justify-center md:justify-start space-x-6 lg:space-x-8">
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden  lg:opacity-100">
+                         <a href="img/insta14.png" data-lightbox="grid"><img src="img/insta14.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta15.png" data-lightbox="grid"> <img src="img/insta15.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                      </div>
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta16.png" data-lightbox="grid">     <img src="img/insta16.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta17.png" data-lightbox="grid">   <img src="img/insta17.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta18.png" data-lightbox="grid">  <img src="img/insta18.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                      </div>
+                      <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-2">
+                        <div class="w-24 h-24 md:w-44 md:h-64 rounded-lg overflow-hidden">
+                          <a href="img/insta19.png" data-lightbox="grid">   <img src="img/insta19.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                        <div class="w-24 h-24 md:w-44 md:h-64  rounded-lg overflow-hidden">
+                          <a href="img/insta20.png" data-lightbox="grid"> <img src="img/insta20.png" alt="" class="border-2 rounded-lg w-full h-full object-center lg:object-cover sm:object-scale-down"></a>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    
+               
+
+
+
+                </div>
+              </div>
+    
+             
+            </div>
+
+
           </div>
         </div>
         </div>
@@ -234,20 +289,18 @@
 
 
 
-<div class="flex flex-wrap items-center bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:justify-between justify-center mt-2">
+
   <div class="w-full md:w-full px-4 mx-auto bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 md:text-right text-center">
     <div class="text-sm text-blueGray-500 font-semibold bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-600 py-1 text-gray-600">
       Copyright © <span id="get-current-year">2021</span>
       <a href="https://github.com/Tarik1700" class="text-gray-600 " target="_blank">Tarik Omerhodzic</a>.
     </div>
   </div>
-</div>
+
 
 </footer>
 
-
-
-
+  
 
 
 
